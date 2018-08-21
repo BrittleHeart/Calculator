@@ -1,0 +1,15 @@
+.hide-second-num {
+    display: none;
+}
+
+.show-second-num {
+    display: block;
+}
+
+.reset {
+    display: none;
+}
+
+.reset-on {
+    display: block;
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Obliczanie liczb ciągu Fibonnaciego</h1>
+    <p>Wprowadź liczbę, a ja zamienię ją na odpowiednik liczby z ciągu Fibonnaciego</p>
+    <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Mała pomoc sprawdzająca</a>
+
+    <hr>
+
+    <input type="text" id="number" class="form-control" placeholder="Podaj liczbę z zakresu 0-1400">
+    <button id="send" type="submit" class="btn btn-outline-secondary">Wyślij</button>
+
+    <h2 id="result"></h2>
+
+    <p id="clock" class="text-right"></p>
+</div>
+
+<script src="../js/moment.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

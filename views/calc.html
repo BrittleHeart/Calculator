@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Witaj w kalkulatorze!</h1>
+    <p>Służy od do wykonywania bardzo prostyk obliczeń, chociaż kto wie...</p>
+
+    <a href="/wika/index.html">Powrót do strony głównej</a> &nbsp; |
+    <a href="/wika/fibonnaci.html">Obliczenia na liczbach fibonnaciego</a>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            <div id="notifications"></div>
+
+                <input type="text" class="form-control" placeholder="Podaj pierwszą liczbę" id="firstNum">
+                <input type="text" class="form-control" id="secondNum" placeholder="Podaj drugą liczbę">
+
+                <input type="text" id="result" class="form-control" placeholder="Wynik wynosi .." disabled>
+
+                <div>
+                    <button type="submit" class="btn btn-outline-primary" id="addition">Dodawanie</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="subtraction">Odejmowanie</button>
+                    <button type="submit" class="btn btn-outline-dark" id="multiplying">Mnożenie</button>
+                    <button type="submit" class="btn btn-outline-success" id="dividing">Dzielenie</button>
+                    <button type="submit"
+                            class="btn btn-outline-primary"
+                            id="root"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="Po naciśnięciu tego przycisku, obliczona zostanie wartość jedynie pierwszej liczby!">
+                        Pierwiastek
+                    </button>
+                    <button type="submit"
+                            class="btn btn-outline-primary"
+                            id="logharytm"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="Po naciśnięciu tego przycisku, obliczona zostanie wartość jedynie pierwszej liczby!">
+                        Logarytmowanie
+                    </button>
+                    <button class="btn btn-outline-danger reset" id="reset">Zresetuj ustawienia</button>
+                </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="../js/calc.js"></script>
+</body>
+</html>
