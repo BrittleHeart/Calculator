@@ -26,57 +26,18 @@ var variables = {
              variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
              variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
              return false;
-         } else  {
+        } else {
             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
             variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
             return true;
         }
     },
 
-    disableButtons: (variables, element) => {
-        switch (element) {
-            case "addition":
-                this.addition.setAttribute("disabled", "disabled");
-                break;
-            case "subtraction":
-                this.subtraction.setAttribute("disabled", "disabled");
-                break;
-            case "multiplying":
-                this.multiplying.setAttribute("disabled", "disabled");
-                break;
-            case "dividing":
-                this.dividing.setAttribute("disabled", "disabled");
-                break;
-            default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
-                break;
-        }
-
-        return element;
-    },
-
-    unDisableButtons: (variables, element) => {
-        switch (element) {
-            case "addition":
-                this.addition.removeAttribute("disabled");
-                break;
-            case "subtraction":
-                this.subtraction.removeAttribute("disabled");
-                break;
-            case "multiplying":
-                this.multiplying.removeAttribute("disabled");
-                break;
-            case "dividing":
-                this.dividing.removeAttribute("disabled");
-                break;
-            default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
-                break;
-        }
-
-        return element;
+    checkIfSecondNumberIsNotZero: () => {
+        if (parseInt(this.secondNum.value) !== 0)
+            return true;
+        else
+            return false;
     },
 
     checkIfFieldIsFilled: () => {
@@ -133,6 +94,52 @@ var variables = {
         }
     },
 
+    disableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.setAttribute("disabled", "disabled");
+                break;
+            case "subtraction":
+                this.subtraction.setAttribute("disabled", "disabled");
+                break;
+            case "multiplying":
+                this.multiplying.setAttribute("disabled", "disabled");
+                break;
+            case "dividing":
+                this.dividing.setAttribute("disabled", "disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                break;
+        }
+
+        return element;
+    },
+
+    unDisableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.removeAttribute("disabled");
+                break;
+            case "subtraction":
+                this.subtraction.removeAttribute("disabled");
+                break;
+            case "multiplying":
+                this.multiplying.removeAttribute("disabled");
+                break;
+            case "dividing":
+                this.dividing.removeAttribute("disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                break;
+        }
+
+        return element;
+    },
+
     setNotificationContent: (variables, attribute, attributeName = "", content) => {
         switch (attribute) {
             case "setAttribute":
@@ -151,6 +158,22 @@ var variables = {
         }
 
         return content;
+    },
+
+    tooltipGenerator(variables, element) {
+        for (let i = 0; i <= this.element.length; i++){
+            this.element[i] = element;
+
+            if (this.element[i] === "root")
+                return $(this.root).tooltip();
+            else if (this.element[i + 1] === "logharytm")
+                return $(this.logharytm).tooltip();
+            else {
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid operation");
+                return false;
+            }
+        }
     },
 
     onAddition: () => {
@@ -177,28 +200,17 @@ var variables = {
         });
     },
 
-    onOividing: () => {
+    onDividing: () => {
         if (this.dividing.onclick = () => {
-            if (variables.checkCredentials() === true)
+            if (variables.checkCredentials() === true && variables.checkIfSecondNumberIsNotZero() === true)
                 return this.result.value = parseInt(this.firstNum.value) / parseInt(this.secondNum.value);
-            else return false;
+            else {
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Nie dziel przez 0!");
+
+                return this.result.value = "Wynik wynosi ..";
+            }
         });
-    },
-
-    tooltipGenerator(variables, element) {
-      for (let i = 0; i <= this.element.length; i++){
-          this.element[i] = element;
-
-          if (this.element[i] === "root")
-              return $(this.root).tooltip();
-          else if (this.element[i + 1] === "logharytm")
-              return $(this.logharytm).tooltip();
-          else {
-              variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-              variables.setNotificationContent(variables, "innerHTML", "", "Invalid operation");
-              return false;
-          }
-      }
     },
 
     onRoot: () => {
@@ -275,7 +287,7 @@ var variables = {
 variables.onAddition();
 variables.onSubtraction();
 variables.onMultiplying();
-variables.onOividing();
+variables.onDividing();
 variables.onRoot();
 variables.onLogharytm();
 variables.onReset();
