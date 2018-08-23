@@ -105,8 +105,6 @@ var variables = {
                 variables.disableButtons(variables, "multiplying");
                 variables.disableButtons(variables, "dividing");
 
-                console.log(this.isFilled);
-
             } else {
                 variables.setNotificationContent(variables, "removeAttribute", "class", "");
                 variables.setNotificationContent(variables, "innerHTML", "", "");
@@ -116,7 +114,6 @@ var variables = {
                 variables.unDisableButtons(variables, "multiplying");
                 variables.unDisableButtons(variables, "dividing");
 
-                console.log(this.isFilled);
             }
         });
 
@@ -289,7 +286,7 @@ var variables = {
             this.reset.classList.toggle("reset");
 
         });
-    }
+    },
 };
 
 variables.onAddition();
