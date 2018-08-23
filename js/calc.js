@@ -49,7 +49,7 @@ var variables = {
                 break;
             default:
                 variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid attribute operation");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
                 break;
         }
 
@@ -202,12 +202,18 @@ var variables = {
         this.root.onmouseenter = () => {variables.tooltipGenerator(variables, "root")};
 
         if (this.root.onclick = () => {
-            setTimeout(() => { this.secondNum.classList.toggle("hide-second-num"); }, 100);
+            setTimeout(() => { this.secondNum.classList.add("hide-second-num"); }, 100);
 
-            this.reset.classList.toggle("reset");
+            this.reset.classList.remove("reset");
 
             if (variables.checkRootAndAlghorytmCredencials() === true) {
                 this.result.value = Math.sqrt(this.firstNum.value);
+
+                variables.disableButtons(variables, "addition");
+                variables.disableButtons(variables, "subtraction");
+                variables.disableButtons(variables, "multiplying");
+                variables.disableButtons(variables, "dividing");
+
                 return variables.checkRootAndAlghorytmCredencials();
             }
             else
@@ -220,13 +226,19 @@ var variables = {
 
         if (this.logharytm.onclick = () => {
 
-            setTimeout(() => { this.secondNum.classList.toggle("hide-second-num"); }, 100);
+            setTimeout(() => { this.secondNum.classList.add("hide-second-num"); }, 100);
 
-            this.reset.classList.toggle("reset");
+            this.reset.classList.remove("reset");
 
             if (variables.checkRootAndAlghorytmCredencials() === true)
             {
                 this.result.value = Math.log2(this.firstNum.value);
+
+                variables.disableButtons(variables, "addition");
+                variables.disableButtons(variables, "subtraction");
+                variables.disableButtons(variables, "multiplying");
+                variables.disableButtons(variables, "dividing");
+
                 return variables.checkRootAndAlghorytmCredencials();
             }
             else
@@ -241,12 +253,18 @@ var variables = {
 
             this.secondNum.removeAttribute("disabled");
             this.secondNum.value = "";
-            this.secondNum.classList.toggle("hide-second-num");
+            this.secondNum.classList.remove("hide-second-num");
+
+            variables.unDisableButtons(variables, "addition");
+            variables.unDisableButtons(variables, "subtraction");
+            variables.unDisableButtons(variables, "multiplying");
+            variables.unDisableButtons(variables, "dividing");
 
             this.firstNum.value = "";
             this.result.value = "Wynik wynosi ..";
 
             this.reset.classList.toggle("reset");
+
         });
     }
 };
