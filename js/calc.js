@@ -18,18 +18,19 @@ var variables = {
     isFilled: false,
 
     checkCredentials: () => {
-        if (this.firstNum.value !== "" && this.secondNum.value !== "") {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
-            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
-            return true;
-        } else if (isNaN(this.firstNum.value) && this.secondNum.value) {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
-            variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
-            return false;
-        } else {
+        if (this.firstNum.value === "" && this.secondNum.value === "") {
             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
             variables.setNotificationContent(variables, "innerHTML", "", "Proszę wypełnić wymagane pola!");
             return false;
+        } else if (isNaN(this.firstNum.value) || isNaN(this.secondNum.value)) {
+             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
+             console.log(123);
+             variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
+             return false;
+         } else  {
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
+            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
+            return true;
         }
     },
 
@@ -97,6 +98,9 @@ var variables = {
                 variables.disableButtons(variables, "subtraction");
                 variables.disableButtons(variables, "multiplying");
                 variables.disableButtons(variables, "dividing");
+
+                console.log(this.isFilled);
+
             } else {
                 variables.setNotificationContent(variables, "removeAttribute", "class", "");
                 variables.setNotificationContent(variables, "innerHTML", "", "");
@@ -105,10 +109,10 @@ var variables = {
                 variables.unDisableButtons(variables, "subtraction");
                 variables.unDisableButtons(variables, "multiplying");
                 variables.unDisableButtons(variables, "dividing");
+
+                console.log(this.isFilled);
             }
         });
-
-        console.log(this.isFilled);
 
         return this.isFilled;
     },
