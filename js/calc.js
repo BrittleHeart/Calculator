@@ -85,6 +85,14 @@ var variables = {
 
             this.secondNum.setAttribute("disabled", "disabled");
 
+            if (parseInt(this.firstNum.value) <= 0) {
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Logarytm oraz pierwiastek z liczby: " + this.firstNum.value + " musi być > 0");
+
+                this.result.value = "Wynik wynosi ..";
+                return false;
+            }
+
             return true;
         } else {
             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");

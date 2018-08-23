@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a27ec7a-5177-4f49-82ac-a48447d6cc17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calc.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -96,7 +95,7 @@
           <entry key="babelrc" value="25" />
           <entry key="gitignore" value="7" />
           <entry key="html" value="176" />
-          <entry key="js" value="4606" />
+          <entry key="js" value="4814" />
           <entry key="json" value="29" />
         </counts>
       </usages-collector>
@@ -104,7 +103,7 @@
         <counts>
           <entry key="HTML" value="176" />
           <entry key="JSON" value="54" />
-          <entry key="JavaScript" value="4606" />
+          <entry key="JavaScript" value="4814" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -141,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/calc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="200" column="6" lean-forward="true" selection-start-line="200" selection-start-column="6" selection-end-line="200" selection-end-column="6" />
+            <state relative-caret-position="562">
+              <caret line="90" column="149" selection-start-line="90" selection-start-column="149" selection-end-line="90" selection-end-column="149" />
             </state>
           </provider>
         </entry>
@@ -169,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/views/calc.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="281">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#655#661#0" expanded="true" />
               </folding>
@@ -318,12 +317,12 @@
       <workItem from="1534884491115" duration="127000" />
       <workItem from="1534886255792" duration="845000" />
       <workItem from="1534958170406" duration="2519000" />
-      <workItem from="1535028869514" duration="12929000" />
+      <workItem from="1535028869514" duration="13397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43995000" />
+    <option name="totallyTimeSpent" value="44463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -459,7 +458,7 @@
     <entry file="file://$PROJECT_DIR$/views/calc.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#655#661#0" expanded="true" />
           </folding>
@@ -468,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="200" column="6" lean-forward="true" selection-start-line="200" selection-start-column="6" selection-end-line="200" selection-end-column="6" />
+        <state relative-caret-position="562">
+          <caret line="90" column="149" selection-start-line="90" selection-start-column="149" selection-end-line="90" selection-end-column="149" />
         </state>
       </provider>
     </entry>
