@@ -1,2 +1,0 @@
-var calc = require("./calc");
-
