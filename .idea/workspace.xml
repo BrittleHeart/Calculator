@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a27ec7a-5177-4f49-82ac-a48447d6cc17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/calc.html" afterDir="false" />
-    </list>
+    <list default="true" id="2a27ec7a-5177-4f49-82ac-a48447d6cc17" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -100,7 +93,7 @@
           <entry key="babelrc" value="25" />
           <entry key="gitignore" value="7" />
           <entry key="html" value="173" />
-          <entry key="js" value="3519" />
+          <entry key="js" value="3521" />
           <entry key="json" value="29" />
         </counts>
       </usages-collector>
@@ -108,7 +101,7 @@
         <counts>
           <entry key="HTML" value="173" />
           <entry key="JSON" value="54" />
-          <entry key="JavaScript" value="3519" />
+          <entry key="JavaScript" value="3521" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -145,8 +138,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/calc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="584">
+              <caret line="273" lean-forward="true" selection-start-line="273" selection-end-line="273" />
             </state>
           </provider>
         </entry>
@@ -319,12 +312,12 @@
       <workItem from="1534884491115" duration="127000" />
       <workItem from="1534886255792" duration="845000" />
       <workItem from="1534958170406" duration="2519000" />
-      <workItem from="1535028869514" duration="9177000" />
+      <workItem from="1535028869514" duration="9437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40243000" />
+    <option name="totallyTimeSpent" value="40503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="584">
+          <caret line="273" lean-forward="true" selection-start-line="273" selection-end-line="273" />
         </state>
       </provider>
     </entry>
