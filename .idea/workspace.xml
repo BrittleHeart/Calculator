@@ -95,7 +95,7 @@
           <entry key="babelrc" value="25" />
           <entry key="gitignore" value="7" />
           <entry key="html" value="176" />
-          <entry key="js" value="4814" />
+          <entry key="js" value="4828" />
           <entry key="json" value="29" />
         </counts>
       </usages-collector>
@@ -103,7 +103,7 @@
         <counts>
           <entry key="HTML" value="176" />
           <entry key="JSON" value="54" />
-          <entry key="JavaScript" value="4814" />
+          <entry key="JavaScript" value="4828" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -140,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/calc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="90" column="149" selection-start-line="90" selection-start-column="149" selection-end-line="90" selection-end-column="149" />
+            <state relative-caret-position="755">
+              <caret line="196" column="52" selection-start-line="196" selection-start-column="52" selection-end-line="196" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -195,6 +195,8 @@
       <find>checkCred</find>
       <find>onDividin</find>
       <find>onO</find>
+      <find>onD</find>
+      <find>onDi</find>
     </findStrings>
     <replaceStrings>
       <replace>variables</replace>
@@ -317,12 +319,12 @@
       <workItem from="1534884491115" duration="127000" />
       <workItem from="1534886255792" duration="845000" />
       <workItem from="1534958170406" duration="2519000" />
-      <workItem from="1535028869514" duration="13397000" />
+      <workItem from="1535028869514" duration="14033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44463000" />
+    <option name="totallyTimeSpent" value="45099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,8 +469,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="90" column="149" selection-start-line="90" selection-start-column="149" selection-end-line="90" selection-end-column="149" />
+        <state relative-caret-position="755">
+          <caret line="196" column="52" selection-start-line="196" selection-start-column="52" selection-end-line="196" selection-end-column="52" />
         </state>
       </provider>
     </entry>

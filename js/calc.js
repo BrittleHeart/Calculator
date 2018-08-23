@@ -18,7 +18,7 @@ var variables = {
     isFilled: false,
 
     checkCredentials: () => {
-        if (this.firstNum.value === "" && this.secondNum.value === "") {
+        if (this.firstNum.value === "" || this.secondNum.value === "") {
             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
             variables.setNotificationContent(variables, "innerHTML", "", "Proszę wypełnić wymagane pola!");
             return false;
@@ -31,6 +31,52 @@ var variables = {
             variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
             return true;
         }
+    },
+
+    disableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.setAttribute("disabled", "disabled");
+                break;
+            case "subtraction":
+                this.subtraction.setAttribute("disabled", "disabled");
+                break;
+            case "multiplying":
+                this.multiplying.setAttribute("disabled", "disabled");
+                break;
+            case "dividing":
+                this.dividing.setAttribute("disabled", "disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                break;
+        }
+
+        return element;
+    },
+
+    unDisableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.removeAttribute("disabled");
+                break;
+            case "subtraction":
+                this.subtraction.removeAttribute("disabled");
+                break;
+            case "multiplying":
+                this.multiplying.removeAttribute("disabled");
+                break;
+            case "dividing":
+                this.dividing.removeAttribute("disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                break;
+        }
+
+        return element;
     },
 
     checkIfSecondNumberIsNotZero: () => {
@@ -100,52 +146,6 @@ var variables = {
 
             return false;
         }
-    },
-
-    disableButtons: (variables, element) => {
-        switch (element) {
-            case "addition":
-                this.addition.setAttribute("disabled", "disabled");
-                break;
-            case "subtraction":
-                this.subtraction.setAttribute("disabled", "disabled");
-                break;
-            case "multiplying":
-                this.multiplying.setAttribute("disabled", "disabled");
-                break;
-            case "dividing":
-                this.dividing.setAttribute("disabled", "disabled");
-                break;
-            default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
-                break;
-        }
-
-        return element;
-    },
-
-    unDisableButtons: (variables, element) => {
-        switch (element) {
-            case "addition":
-                this.addition.removeAttribute("disabled");
-                break;
-            case "subtraction":
-                this.subtraction.removeAttribute("disabled");
-                break;
-            case "multiplying":
-                this.multiplying.removeAttribute("disabled");
-                break;
-            case "dividing":
-                this.dividing.removeAttribute("disabled");
-                break;
-            default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
-                break;
-        }
-
-        return element;
     },
 
     setNotificationContent: (variables, attribute, attributeName = "", content) => {
