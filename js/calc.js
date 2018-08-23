@@ -24,7 +24,6 @@ var variables = {
             return false;
         } else if (isNaN(this.firstNum.value) || isNaN(this.secondNum.value)) {
              variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
-             console.log(123);
              variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
              return false;
          } else  {
