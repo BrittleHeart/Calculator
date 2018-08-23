@@ -1,4 +1,4 @@
-var variables = {
+var calculator = {
     addition: document.getElementById("addition"),
     subtraction: document.getElementById("subtraction"),
     multiplying: document.getElementById("multiplying"),
@@ -17,23 +17,33 @@ var variables = {
 
     isFilled: false,
 
+    init: () => {
+        calculator.onAddition();
+        calculator.onSubtraction();
+        calculator.onMultiplying();
+        calculator.onDividing();
+        calculator.onRoot();
+        calculator.onlogarithm();
+        calculator.onReset();
+    },
+
     checkCredentials: () => {
         if (this.firstNum.value === "" || this.secondNum.value === "") {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
-            variables.setNotificationContent(variables, "innerHTML", "", "Proszę wypełnić wymagane pola!");
+            calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-danger");
+            calculator.setNotificationContent(calculator, "innerHTML", "", "Proszę wypełnić wymagane pola!");
             return false;
         } else if (isNaN(this.firstNum.value) || isNaN(this.secondNum.value)) {
-             variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
-             variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
+             calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-danger");
+             calculator.setNotificationContent(calculator, "innerHTML", "", "Podana wartość nie jest liczbą");
              return false;
         } else {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
-            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
+            calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-success");
+            calculator.setNotificationContent(calculator, "innerHTML", "", "Pomyślnie dokonano akcji!");
             return true;
         }
     },
 
-    disableButtons: (variables, element) => {
+    disableButtons: (calculator, element) => {
         switch (element) {
             case "addition":
                 this.addition.setAttribute("disabled", "disabled");
@@ -48,15 +58,15 @@ var variables = {
                 this.dividing.setAttribute("disabled", "disabled");
                 break;
             default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Invalid buttons operation");
                 break;
         }
 
         return element;
     },
 
-    unDisableButtons: (variables, element) => {
+    unDisableButtons: (calculator, element) => {
         switch (element) {
             case "addition":
                 this.addition.removeAttribute("disabled");
@@ -71,8 +81,8 @@ var variables = {
                 this.dividing.removeAttribute("disabled");
                 break;
             default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Invalid buttons operation");
                 break;
         }
 
@@ -97,22 +107,22 @@ var variables = {
             });
 
             if (this.isFilled === false) {
-                variables.setNotificationContent(variables, "setAttribue", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Prosimy o wypełnienie wszystkich pól przed dokonaniem akcji");
+                calculator.setNotificationContent(calculator, "setAttribue", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Prosimy o wypełnienie wszystkich pól przed dokonaniem akcji");
 
-                variables.disableButtons(variables, "addition");
-                variables.disableButtons(variables, "subtraction");
-                variables.disableButtons(variables, "multiplying");
-                variables.disableButtons(variables, "dividing");
+                calculator.disableButtons(calculator, "addition");
+                calculator.disableButtons(calculator, "subtraction");
+                calculator.disableButtons(calculator, "multiplying");
+                calculator.disableButtons(calculator, "dividing");
 
             } else {
-                variables.setNotificationContent(variables, "removeAttribute", "class", "");
-                variables.setNotificationContent(variables, "innerHTML", "", "");
+                calculator.setNotificationContent(calculator, "removeAttribute", "class", "");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "");
 
-                variables.unDisableButtons(variables, "addition");
-                variables.unDisableButtons(variables, "subtraction");
-                variables.unDisableButtons(variables, "multiplying");
-                variables.unDisableButtons(variables, "dividing");
+                calculator.unDisableButtons(calculator, "addition");
+                calculator.unDisableButtons(calculator, "subtraction");
+                calculator.unDisableButtons(calculator, "multiplying");
+                calculator.unDisableButtons(calculator, "dividing");
 
             }
         });
@@ -123,14 +133,14 @@ var variables = {
     checkRootAndAlghorytmCredencials: () => {
         if (this.firstNum.value !== "" && !isNaN(this.firstNum.value))
         {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
-            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji");
+            calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-success");
+            calculator.setNotificationContent(calculator, "innerHTML", "", "Pomyślnie dokonano akcji");
 
             this.secondNum.setAttribute("disabled", "disabled");
 
             if (parseInt(this.firstNum.value) <= 0) {
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Logarytm oraz pierwiastek z liczby: " + this.firstNum.value + " musi być > 0");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Logarytm oraz pierwiastek z liczby: " + this.firstNum.value + " musi być > 0");
 
                 this.result.value = "Wynik wynosi ..";
                 return false;
@@ -138,14 +148,14 @@ var variables = {
 
             return true;
         } else {
-            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
-            variables.setNotificationContent(variables, "innerHTML", "", "Coś poszło nie tak!");
+            calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-danger");
+            calculator.setNotificationContent(calculator, "innerHTML", "", "Coś poszło nie tak!");
 
             return false;
         }
     },
 
-    setNotificationContent: (variables, attribute, attributeName = "", content) => {
+    setNotificationContent: (calculator, attribute, attributeName = "", content) => {
         switch (attribute) {
             case "setAttribute":
                 this.notifications.setAttribute(attributeName, content);
@@ -157,15 +167,15 @@ var variables = {
                 this.notifications.removeAttribute(attributeName);
                 break;
             default:
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Coś poszło nie tak");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Coś poszło nie tak");
                 break;
         }
 
         return content;
     },
 
-    tooltipGenerator(variables, element) {
+    tooltipGenerator(calculator, element) {
         for (let i = 0; i <= this.element.length; i++){
             this.element[i] = element;
 
@@ -174,8 +184,8 @@ var variables = {
             else if (this.element[i + 1] === "logarithm")
                 return $(this.logarithm).tooltip();
             else {
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Invalid operation");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Invalid operation");
                 return false;
             }
         }
@@ -183,7 +193,7 @@ var variables = {
 
     onAddition: () => {
             if (this.addition.onclick = () => {
-                if (variables.checkCredentials())
+                if (calculator.checkCredentials())
                     return this.result.value = parseInt(this.firstNum.value) + parseInt(this.secondNum.value);
                 else return false;
             });
@@ -191,7 +201,7 @@ var variables = {
 
     onSubtraction: () => {
         if (this.subtraction.onclick = () => {
-            if (variables.checkCredentials() === true)
+            if (calculator.checkCredentials() === true)
                 return this.result.value = parseInt(this.firstNum.value) - parseInt(this.secondNum.value);
             else return false;
         });
@@ -199,7 +209,7 @@ var variables = {
 
     onMultiplying: () => {
         if (this.multiplying.onclick = () => {
-            if (variables.checkCredentials() === true)
+            if (calculator.checkCredentials() === true)
                 return this.result.value = parseInt(this.firstNum.value) * parseInt(this.secondNum.value);
             else return false;
         });
@@ -207,11 +217,11 @@ var variables = {
 
     onDividing: () => {
         if (this.dividing.onclick = () => {
-            if (variables.checkCredentials() === true && variables.checkIfSecondNumberIsNotZero() === true)
+            if (calculator.checkCredentials() === true && calculator.checkIfSecondNumberIsNotZero() === true)
                 return this.result.value = parseInt(this.firstNum.value) / parseInt(this.secondNum.value);
             else {
-                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
-                variables.setNotificationContent(variables, "innerHTML", "", "Nie dziel przez 0!");
+                calculator.setNotificationContent(calculator, "setAttribute", "class", "alert alert-warning");
+                calculator.setNotificationContent(calculator, "innerHTML", "", "Nie dziel przez 0!");
 
                 return this.result.value = "Wynik wynosi ..";
             }
@@ -219,22 +229,22 @@ var variables = {
     },
 
     onRoot: () => {
-        this.root.onmouseenter = () => {variables.tooltipGenerator(variables, "root")};
+        this.root.onmouseenter = () => {calculator.tooltipGenerator(calculator, "root")};
 
         if (this.root.onclick = () => {
             setTimeout(() => { this.secondNum.classList.add("hide-second-num"); }, 100);
 
             this.reset.classList.remove("reset");
 
-            if (variables.checkRootAndAlghorytmCredencials() === true) {
+            if (calculator.checkRootAndAlghorytmCredencials() === true) {
                 this.result.value = Math.sqrt(this.firstNum.value);
 
-                variables.disableButtons(variables, "addition");
-                variables.disableButtons(variables, "subtraction");
-                variables.disableButtons(variables, "multiplying");
-                variables.disableButtons(variables, "dividing");
+                calculator.disableButtons(calculator, "addition");
+                calculator.disableButtons(calculator, "subtraction");
+                calculator.disableButtons(calculator, "multiplying");
+                calculator.disableButtons(calculator, "dividing");
 
-                return variables.checkRootAndAlghorytmCredencials();
+                return calculator.checkRootAndAlghorytmCredencials();
             }
             else
                 return false;
@@ -242,7 +252,7 @@ var variables = {
     },
 
     onlogarithm: () => {
-        this.logarithm.onmouseenter = () => {variables.tooltipGenerator(variables, "logarithm")};
+        this.logarithm.onmouseenter = () => {calculator.tooltipGenerator(calculator, "logarithm")};
 
         if (this.logarithm.onclick = () => {
 
@@ -250,16 +260,16 @@ var variables = {
 
             this.reset.classList.remove("reset");
 
-            if (variables.checkRootAndAlghorytmCredencials() === true)
+            if (calculator.checkRootAndAlghorytmCredencials() === true)
             {
                 this.result.value = Math.log2(this.firstNum.value);
 
-                variables.disableButtons(variables, "addition");
-                variables.disableButtons(variables, "subtraction");
-                variables.disableButtons(variables, "multiplying");
-                variables.disableButtons(variables, "dividing");
+                calculator.disableButtons(calculator, "addition");
+                calculator.disableButtons(calculator, "subtraction");
+                calculator.disableButtons(calculator, "multiplying");
+                calculator.disableButtons(calculator, "dividing");
 
-                return variables.checkRootAndAlghorytmCredencials();
+                return calculator.checkRootAndAlghorytmCredencials();
             }
             else
                 return false;
@@ -275,10 +285,10 @@ var variables = {
             this.secondNum.value = "";
             this.secondNum.classList.remove("hide-second-num");
 
-            variables.unDisableButtons(variables, "addition");
-            variables.unDisableButtons(variables, "subtraction");
-            variables.unDisableButtons(variables, "multiplying");
-            variables.unDisableButtons(variables, "dividing");
+            calculator.unDisableButtons(calculator, "addition");
+            calculator.unDisableButtons(calculator, "subtraction");
+            calculator.unDisableButtons(calculator, "multiplying");
+            calculator.unDisableButtons(calculator, "dividing");
 
             this.firstNum.value = "";
             this.result.value = "Wynik wynosi ..";
@@ -289,12 +299,7 @@ var variables = {
     },
 };
 
-variables.onAddition();
-variables.onSubtraction();
-variables.onMultiplying();
-variables.onDividing();
-variables.onRoot();
-variables.onlogarithm();
-variables.onReset();
-
-window.onload = () => { variables.checkIfFieldIsFilled(); };
+window.onload = () => {
+    calculator.checkIfFieldIsFilled();
+    calculator.init()
+};

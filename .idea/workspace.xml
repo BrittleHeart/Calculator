@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a27ec7a-5177-4f49-82ac-a48447d6cc17" name="Default Changelist" comment="" />
+    <list default="true" id="2a27ec7a-5177-4f49-82ac-a48447d6cc17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/js/calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calc.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -93,7 +95,7 @@
           <entry key="babelrc" value="25" />
           <entry key="gitignore" value="7" />
           <entry key="html" value="176" />
-          <entry key="js" value="4941" />
+          <entry key="js" value="4981" />
           <entry key="json" value="29" />
         </counts>
       </usages-collector>
@@ -101,7 +103,7 @@
         <counts>
           <entry key="HTML" value="176" />
           <entry key="JSON" value="54" />
-          <entry key="JavaScript" value="4941" />
+          <entry key="JavaScript" value="4981" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -138,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/calc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1883">
-              <caret line="288" column="6" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="6" />
+            <state relative-caret-position="699">
+              <caret line="297" column="11" lean-forward="true" selection-start-line="297" selection-start-column="11" selection-end-line="297" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -165,8 +167,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/calc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="200">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding>
                 <element signature="e#655#661#0" expanded="true" />
               </folding>
@@ -195,9 +197,11 @@
       <find>onO</find>
       <find>onD</find>
       <find>onDi</find>
+      <find>logharytm</find>
     </findStrings>
     <replaceStrings>
       <replace>variables</replace>
+      <replace>logarithm</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -265,6 +269,11 @@
               <item name="calculators" type="b2602c69:ProjectViewProjectNode" />
               <item name="calculators" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="calculators" type="b2602c69:ProjectViewProjectNode" />
+              <item name="calculators" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -317,12 +326,12 @@
       <workItem from="1534884491115" duration="127000" />
       <workItem from="1534886255792" duration="845000" />
       <workItem from="1534958170406" duration="2519000" />
-      <workItem from="1535028869514" duration="15030000" />
+      <workItem from="1535028869514" duration="15302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46096000" />
+    <option name="totallyTimeSpent" value="46368000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -457,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/calc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="200">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding>
             <element signature="e#655#661#0" expanded="true" />
           </folding>
@@ -467,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1883">
-          <caret line="288" column="6" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="6" />
+        <state relative-caret-position="699">
+          <caret line="297" column="11" lean-forward="true" selection-start-line="297" selection-start-column="11" selection-end-line="297" selection-end-column="11" />
         </state>
       </provider>
     </entry>
