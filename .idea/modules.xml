@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/wika.iml" filepath="$PROJECT_DIR$/.idea/wika.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/calculators.iml" filepath="$PROJECT_DIR$/.idea/calculators.iml" />
     </modules>
   </component>
 </project>

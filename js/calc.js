@@ -15,77 +15,147 @@ var variables = {
     element: ["root", "logharytm"],
     form: document.getElementById("form"),
 
+    isFilled: false,
+
     checkCredentials: () => {
-        if ((this.firstNum.value === "" || this.firstNum.value === undefined) && (this.secondNum.value === "" || this.secondNum.value === undefined)) {
-            this.notifications.setAttribute("class", "alert alert-danger");
-            this.notifications.innerHTML = "Proszę wypełnij wymagane dane";
-            return false;
+        if (this.firstNum.value !== "" && this.secondNum.value !== "") {
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
+            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji!");
+            return true;
         } else if (isNaN(this.firstNum.value) && this.secondNum.value) {
-            this.notifications.setAttribute("class", "alert alert-danger");
-            this.notifications.innerHTML = "Podana przez Ciebie wartość nie jest liczbą!";
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
+            variables.setNotificationContent(variables, "innerHTML", "", "Podana wartość nie jest liczbą");
             return false;
-        } else if (this.firstNum.onblur = () => {
-            console.log("sadad");
-            if (this.firstNum.value === "" || this.secondNum.value === "" ) {
-                this.notifications.setAttribute("class", "alert alert-warning");
-                this.notifications.innerHTML = "Prosimy o wypełnienie obu z pól, przed przystąpieniem do akcji!";
-                return false;
+        } else {
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
+            variables.setNotificationContent(variables, "innerHTML", "", "Proszę wypełnić wymagane pola!");
+            return false;
+        }
+    },
+
+    disableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.setAttribute("disabled", "disabled");
+                break;
+            case "subtraction":
+                this.subtraction.setAttribute("disabled", "disabled");
+                break;
+            case "multiplying":
+                this.multiplying.setAttribute("disabled", "disabled");
+                break;
+            case "dividing":
+                this.dividing.setAttribute("disabled", "disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid attribute operation");
+                break;
+        }
+
+        return element;
+    },
+
+    unDisableButtons: (variables, element) => {
+        switch (element) {
+            case "addition":
+                this.addition.removeAttribute("disabled");
+                break;
+            case "subtraction":
+                this.subtraction.removeAttribute("disabled");
+                break;
+            case "multiplying":
+                this.multiplying.removeAttribute("disabled");
+                break;
+            case "dividing":
+                this.dividing.removeAttribute("disabled");
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Invalid buttons operation");
+                break;
+        }
+
+        return element;
+    },
+
+    checkIfFieldIsFilled: () => {
+        if (this.firstNum.onblur = () => {
+            if (this.firstNum.value === "")         this.isFilled = false;
+            else                                    this.isFilled = true;
+
+            if (this.secondNum.onblur = () => {
+                if (this.secondNum.value === "")    this.isFilled = false;
+                else                                this.isFilled = true;
+            });
+
+            if (this.isFilled === false) {
+                variables.setNotificationContent(variables, "setAttribue", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Prosimy o wypełnienie wszystkich pól przed dokonaniem akcji");
+
+                variables.disableButtons(variables, "addition");
+                variables.disableButtons(variables, "subtraction");
+                variables.disableButtons(variables, "multiplying");
+                variables.disableButtons(variables, "dividing");
+            } else {
+                variables.setNotificationContent(variables, "removeAttribute", "class", "");
+                variables.setNotificationContent(variables, "innerHTML", "", "");
+
+                variables.unDisableButtons(variables, "addition");
+                variables.unDisableButtons(variables, "subtraction");
+                variables.unDisableButtons(variables, "multiplying");
+                variables.unDisableButtons(variables, "dividing");
             }
         });
 
-        if (this.firstNum.value !== "" && this.secondNum.value !== "") {
-            this.notifications.setAttribute("class", "alert alert-success");
-            this.notifications.innerHTML = "Pomyślnie dokonano akcji!";
-            return true;
-        } else {
-            this.notifications.setAttribute("class", "alert alert-danger");
-            this.notifications.innerHTML = "Proszę wypełnij wymagane dane!";
-            return false;
-        }
+        console.log(this.isFilled);
+
+        return this.isFilled;
     },
 
     checkRootAndAlghorytmCredencials: () => {
         if (this.firstNum.value !== "" && !isNaN(this.firstNum.value))
         {
-            this.notifications.setAttribute("class", "alert alert-success");
-            this.notifications.innerHTML = "Pomyślnie dokonano akcji!";
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-success");
+            variables.setNotificationContent(variables, "innerHTML", "", "Pomyślnie dokonano akcji");
 
             this.secondNum.setAttribute("disabled", "disabled");
-            this.result.value = Math.sqrt(this.firstNum.value);
 
             return true;
         } else {
-            this.notifications.setAttribute("class", "alert alert-danger");
-            this.notifications.innerHTML = "Coś poszło nie tak";
+            variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-danger");
+            variables.setNotificationContent(variables, "innerHTML", "", "Coś poszło nie tak!");
 
             return false;
         }
+    },
 
-        if (this.logharytm.onclick = () => {
-            if (this.firstNum.value !== "" && !isNaN(this.firstNum.value))
-            {
-                this.notifications.setAttribute("class", "alert alert-success alert-dismissible");
-                this.notifications.innerHTML = `Pomyślnie dokonano akcji!`;
+    setNotificationContent: (variables, attribute, attributeName = "", content) => {
+        switch (attribute) {
+            case "setAttribute":
+                this.notifications.setAttribute(attributeName, content);
+                break;
+            case "innerHTML":
+                this.notifications.innerHTML = content;
+                break;
+            case "removeAttribute":
+                this.notifications.removeAttribute(attributeName);
+                break;
+            default:
+                variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+                variables.setNotificationContent(variables, "innerHTML", "", "Coś poszło nie tak");
+                break;
+        }
 
-                this.secondNum.setAttribute("disabled", "disabled");
-                this.result.value = Math.log2(this.firstNum.value);
-
-                return true;
-            } else {
-                this.notifications.setAttribute("class", "alert alert-danger");
-                this.notifications.innerHTML = "Coś poszło nie tak";
-
-                return false;
-            }
-        });
+        return content;
     },
 
     onAddition: () => {
-        if (this.addition.onclick = () => {
-            if (variables.checkCredentials())
-                return this.result.value = parseInt(this.firstNum.value) + parseInt(this.secondNum.value);
-            else return false;
-        });
+            if (this.addition.onclick = () => {
+                if (variables.checkCredentials())
+                    return this.result.value = parseInt(this.firstNum.value) + parseInt(this.secondNum.value);
+                else return false;
+            });
     },
 
     onSubtraction: () => {
@@ -121,8 +191,8 @@ var variables = {
           else if (this.element[i + 1] === "logharytm")
               return $(this.logharytm).tooltip();
           else {
-              this.notifications.setAttribute("class", "alert alert-warning");
-              this.notifications.innerHTML = "Invalid operation";
+              variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
+              variables.setNotificationContent(variables, "innerHTML", "", "Invalid operation");
               return false;
           }
       }
@@ -136,8 +206,10 @@ var variables = {
 
             this.reset.classList.toggle("reset");
 
-            if (variables.checkRootAndAlghorytmCredencials() === true)
+            if (variables.checkRootAndAlghorytmCredencials() === true) {
+                this.result.value = Math.sqrt(this.firstNum.value);
                 return variables.checkRootAndAlghorytmCredencials();
+            }
             else
                 return false;
         });
@@ -153,7 +225,10 @@ var variables = {
             this.reset.classList.toggle("reset");
 
             if (variables.checkRootAndAlghorytmCredencials() === true)
+            {
+                this.result.value = Math.log2(this.firstNum.value);
                 return variables.checkRootAndAlghorytmCredencials();
+            }
             else
                 return false;
         });
@@ -183,3 +258,5 @@ variables.onOividing();
 variables.onRoot();
 variables.onLogharytm();
 variables.onReset();
+
+window.onload = () => { variables.checkIfFieldIsFilled(); };
