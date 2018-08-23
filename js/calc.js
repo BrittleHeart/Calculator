@@ -4,7 +4,7 @@ var variables = {
     multiplying: document.getElementById("multiplying"),
     dividing: document.getElementById("dividing"),
     root: document.getElementById("root"),
-    logharytm: document.getElementById("logharytm"),
+    logarithm: document.getElementById("logarithm"),
 
     firstNum: document.getElementById("firstNum"),
     secondNum: document.getElementById("secondNum"),
@@ -12,7 +12,7 @@ var variables = {
     result: document.getElementById("result"),
 
     notifications: document.getElementById("notifications"),
-    element: ["root", "logharytm"],
+    element: ["root", "logarithm"],
     form: document.getElementById("form"),
 
     isFilled: false,
@@ -171,8 +171,8 @@ var variables = {
 
             if (this.element[i] === "root")
                 return $(this.root).tooltip();
-            else if (this.element[i + 1] === "logharytm")
-                return $(this.logharytm).tooltip();
+            else if (this.element[i + 1] === "logarithm")
+                return $(this.logarithm).tooltip();
             else {
                 variables.setNotificationContent(variables, "setAttribute", "class", "alert alert-warning");
                 variables.setNotificationContent(variables, "innerHTML", "", "Invalid operation");
@@ -241,10 +241,10 @@ var variables = {
         });
     },
 
-    onLogharytm: () => {
-        this.logharytm.onmouseenter = () => {variables.tooltipGenerator(variables, "logharytm")};
+    onlogarithm: () => {
+        this.logarithm.onmouseenter = () => {variables.tooltipGenerator(variables, "logarithm")};
 
-        if (this.logharytm.onclick = () => {
+        if (this.logarithm.onclick = () => {
 
             setTimeout(() => { this.secondNum.classList.add("hide-second-num"); }, 100);
 
@@ -294,7 +294,7 @@ variables.onSubtraction();
 variables.onMultiplying();
 variables.onDividing();
 variables.onRoot();
-variables.onLogharytm();
+variables.onlogarithm();
 variables.onReset();
 
 window.onload = () => { variables.checkIfFieldIsFilled(); };
